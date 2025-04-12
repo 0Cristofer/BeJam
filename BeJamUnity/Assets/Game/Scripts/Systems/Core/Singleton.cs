@@ -30,7 +30,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 if (instance == null)
                 {
                     // Search for existing instance.
-                    instance = (T)FindObjectOfType(typeof(T));
+                    instance = (T) FindAnyObjectByType(typeof(T));
 
                     // Create new instance if one doesn't already exist.
                     if (instance == null)
