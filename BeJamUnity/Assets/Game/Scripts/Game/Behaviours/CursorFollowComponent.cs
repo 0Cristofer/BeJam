@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CursorFollowComponent : MonoBehaviour
 {
-    public Canvas canvas;
     public Camera mainCamera;
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
@@ -17,15 +16,12 @@ public class CursorFollowComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            mousePosition = Input.mousePosition;
+            mousePosition.x = Mathf.Clamp(Input.mousePosition.x, 0.0f, Screen.width);
+            mousePosition.y = Mathf.Clamp(Input.mousePosition.y, 0.0f, Screen.height);
             if (mainCamera is not null)
             {
                 mousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
-                // if (mousePosition.x > -Screen.width * 0.5f && mousePosition.x < Screen.width * 0.5f &&
-                //     mousePosition.x > -Screen.height * 0.5f && mousePosition.y < Screen.height * 0.5f)
-                // {
-                    transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
-                // }
+                transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
             }
     }
 }
