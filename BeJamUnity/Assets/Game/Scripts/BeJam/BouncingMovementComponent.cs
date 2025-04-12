@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BeJam
 {
-    public class BouncingMovement : MonoBehaviour
+    public class BouncingMovementComponent : MonoBehaviour
     {
         [field: SerializeField]
         private Rigidbody2D Rigidbody2D { get; set; }
@@ -21,6 +22,8 @@ namespace BeJam
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            SceneManager.LoadScene("EndMenu");
+            return;
             if (other.gameObject.transform.position.x > 0)
             {
                 CurrentVelocity = new Vector2(-CurrentVelocity.x, CurrentVelocity.y);

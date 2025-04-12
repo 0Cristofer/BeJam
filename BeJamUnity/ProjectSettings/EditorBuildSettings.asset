@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Game/Level 2.unity
     guid: 18e7df52f62402f40861c227536cb509
+  - enabled: 1
+    path: Assets/Game/Scenes/BeJam/MainMenu.unity
+    guid: 9d036c6c3a7bbbb409fdc8c403eef4bc
+  - enabled: 1
+    path: Assets/Game/Scenes/BeJam/Level1.unity
+    guid: 26d12502ca55f81409de3187ac3d93f9
+  - enabled: 1
+    path: Assets/Game/Scenes/BeJam/EndMenu.unity
+    guid: 5792767b9c4b9734da45d7fe93a0b316
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
