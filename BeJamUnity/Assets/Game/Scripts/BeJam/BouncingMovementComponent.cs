@@ -22,8 +22,11 @@ namespace BeJam
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            SceneManager.LoadScene("EndMenu");
-            return;
+            if (other.GetComponent<PostIt>() != null)
+            {
+                return;
+            }
+            
             if (other.gameObject.transform.position.x > 0)
             {
                 CurrentVelocity = new Vector2(-CurrentVelocity.x, CurrentVelocity.y);

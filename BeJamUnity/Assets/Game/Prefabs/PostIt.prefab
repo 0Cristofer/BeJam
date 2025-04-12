@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3145523090595254312}
   - component: {fileID: 8540995464866851058}
   - component: {fileID: 1516999597044206785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PostIt
   m_TagString: PostIt
   m_Icon: {fileID: 0}

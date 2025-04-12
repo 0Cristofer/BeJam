@@ -6,11 +6,11 @@ namespace BeJam
 {
     public class PostIt : MonoBehaviour
     {
-        private Dictionary<string, GameObject> _pawns;
+        private Dictionary<IHidableEntity, GameObject> _pawns;
         
         void Start()
         {
-            _pawns = new Dictionary<string, GameObject>();
+            _pawns = new Dictionary<IHidableEntity, GameObject>();
         }
 
         // Update is called once per frame
@@ -18,12 +18,12 @@ namespace BeJam
         {
             if (_pawns.Count > 0)
             {
-                foreach (KeyValuePair<string, GameObject> kpv in _pawns)
+                foreach (KeyValuePair<IHidableEntity, GameObject> kpv in _pawns)
                 {
                     if (IsCompletlyHidden(kpv.Value))
                     {
                         Debug.Log("HIDEN!!!!!!!!!!!!!!!!!!!");
-                        // TODO : STUFF ON COVERED
+                        kpv.Key.Hide();
                     }
                 }
             }
@@ -70,17 +70,21 @@ namespace BeJam
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Pawn"))
+            var component = other.gameObject.GetComponent<IHidableEntity>();
+
+            if (component != null)
             {
-                _pawns.Add(other.name, other.gameObject);
+                _pawns.Add(component, other.gameObject);
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag("Pawn"))
+            var component = other.gameObject.GetComponent<IHidableEntity>();
+
+            if (component != null)
             {
-                _pawns.Remove(other.name);
+                _pawns.Remove(component);
             }
         }
     }    
