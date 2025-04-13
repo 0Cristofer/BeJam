@@ -67,14 +67,11 @@ namespace BeJam
             var x = Random.Range(minX, maxX);
             var y = Random.Range(minY, maxY);
             var enemyPosition = new Vector2(x, y);
-            Debug.Log("Spawn: " + enemyPosition);
-            Debug.Log("player: " + Player.transform.position);
 
             var playerCollider = Player.GetComponent<Collider2D>();
             if (playerCollider == null)
                 return;
 
-            SpawnAreCollider.IsTouching(playerCollider);
             if (SpawnAreCollider.bounds.Intersects(playerCollider.bounds))
             {
                 return; 
