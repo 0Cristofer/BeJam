@@ -26,7 +26,7 @@ namespace BeJam
             
             var velocityX = Random.Range(MinVelocity.x, MaxVelocity.x);
             var velocityY = Random.Range(MinVelocity.y, MaxVelocity.y);
-            
+            Debug.Log("Spawning with velocity: " + new Vector2(velocityX, velocityY));
             BouncingMovement.SetVelocity(new Vector2(velocityX, velocityY));
             EnemiesText = enemiesText;
         }

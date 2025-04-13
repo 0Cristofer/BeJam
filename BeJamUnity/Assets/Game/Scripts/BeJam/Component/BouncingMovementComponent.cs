@@ -15,6 +15,7 @@ namespace BeJam
 
         public void SetVelocity(Vector2 velocity)
         {
+            StartVelocity = velocity;
             CurrentVelocity = velocity;
             Rigidbody2D.linearVelocity = CurrentVelocity;
         }
@@ -32,6 +33,11 @@ namespace BeJam
             }
             
             if (other.GetComponent<EnemyComponent>() != null)
+            {
+                return;
+            }
+            
+            if (other.GetComponent<EnemySpawner>() != null)
             {
                 return;
             }
