@@ -41,6 +41,11 @@ namespace BeJam
             {
                 return;
             }
+
+            if (GetComponent<EnemyComponent>() != null)
+            {
+                CurrentVelocity *= 0.85f;
+            }
             
             if (other.gameObject.transform.position.x > 0)
             {
