@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 8ea831c9978f73847bba110447c2b681
+guid: 2f598a856454ae940bd331e3b02c66c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3168016865453212096
-    second: HandCursor_0
+      213: -419554825196710489
+    second: HandCursor2_0
   - first:
-      213: -9117467190269278309
-    second: HandCursor_1
-  - first:
-      213: -1136725025200309269
-    second: HandCursor_2
+      213: 8584899439081797141
+    second: HandCursor2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,11 +52,11 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  alignment: 9
+  spritePivot: {x: 0.19635898, y: 0.74855566}
+  spritePixelsToUnits: 108
+  spriteBorder: {x: 40, y: 28, z: 34, w: 27}
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -102,17 +99,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HandCursor_1
+      name: HandCursor2_0
       rect:
         serializedVersion: 2
         x: 37
-        y: 33
-        width: 184
-        height: 191
+        y: 34
+        width: 183
+        height: 194
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9788b895ef387180800000000000000
-      internalID: -9117467190269278309
+      spriteID: 7a559500c117d2af0800000000000000
+      internalID: -419554825196710489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandCursor2_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 28
+        width: 67
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516bbea1e80b32770800000000000000
+      internalID: 8584899439081797141
       vertices: []
       indices: 
       edges: []
@@ -131,8 +176,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 535efce641fba7240b192971edcd84e1
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -141,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HandCursor_1: -9117467190269278309
+      HandCursor2_0: -419554825196710489
+      HandCursor2_1: 8584899439081797141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 namespace BeJam
 {
-    public class PlayerComponent : MonoBehaviour, IHidableEntity
+    public class PlayerComponent : MonoBehaviour, ICoverableEntity
     {
-        public void Hide()
+        public void OnCovered()
         {
             SceneManager.LoadScene("EndMenu");
         }

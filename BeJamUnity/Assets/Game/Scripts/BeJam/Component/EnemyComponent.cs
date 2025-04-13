@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace BeJam
 {
-    public class EnemyComponent : MonoBehaviour, IHidableEntity
+    public class EnemyComponent : MonoBehaviour, ICoverableEntity
     {
-        public void Hide()
+        public void OnCovered()
         {
             Destroy(gameObject);
         }
