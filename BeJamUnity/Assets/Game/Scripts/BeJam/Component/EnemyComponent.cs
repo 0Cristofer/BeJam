@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +18,9 @@ namespace BeJam
         [field: SerializeField]
         private Vector2 MaxVelocity { get; set; }
         
-        public void Init(Vector2 spawnPosition)
+        private TextMeshProUGUI EnemiesText { get; set; }
+        
+        public void Init(Vector2 spawnPosition, TextMeshProUGUI enemiesText)
         {
             Rigidbody2D.position = new Vector3(spawnPosition.x, spawnPosition.y, -1f);
             
@@ -25,12 +28,14 @@ namespace BeJam
             var velocityY = Random.Range(MinVelocity.y, MaxVelocity.y);
             
             BouncingMovement.SetVelocity(new Vector2(velocityX, velocityY));
+            EnemiesText = enemiesText;
         }
         
         public void OnCovered()
         {
             Destroy(gameObject);
             EndGameManager.TotalEnemies--;
+            EnemiesText.text = "Enemies left: " + EndGameManager.TotalEnemies;
 
             if (EndGameManager.TotalEnemies != 0)
                 return;

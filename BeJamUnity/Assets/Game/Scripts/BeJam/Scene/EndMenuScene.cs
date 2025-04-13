@@ -23,6 +23,7 @@ namespace BeJam
             
             EndGameText.text = EndGameManager.DidWin ? "You Win!" : "You Lose!";
             EndGameManager.DidWin = false;
+            EndGameManager.TotalEnemies = 0;
         }
 
         private void StartGame()

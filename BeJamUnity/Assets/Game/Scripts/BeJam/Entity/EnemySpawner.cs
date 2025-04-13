@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,6 +11,12 @@ namespace BeJam
         
         [field: SerializeField]
         private PlayerComponent Player { get; set; }
+
+        [field: SerializeField]
+        private BoxCollider2D SpawnAreCollider { get; set; }
+        
+        [field: SerializeField]
+        private TextMeshProUGUI EnemiesText { get; set; }
         
         [field: SerializeField]
         private uint EnemiesToSpawn { get; set; }
@@ -22,9 +29,6 @@ namespace BeJam
 
         [field: SerializeField]
         private float MaxSpawnInterval { get; set; }
-
-        [field: SerializeField]
-        private Vector4 SpawnBounds { get; set; }
         
         private uint EnemiesSpawned { get; set; }
         private float CurrentSpawnInterval { get; set; }
@@ -34,6 +38,7 @@ namespace BeJam
         {
             EnemiesSpawned = 0;
             EndGameManager.TotalEnemies += EnemiesToSpawn;
+            EnemiesText.text = "Enemies left: " + EndGameManager.TotalEnemies;
             CurrentSpawnInterval = FirstSpawnInterval;
             TimeSinceLastSpawn = 0;
         }
@@ -54,40 +59,30 @@ namespace BeJam
 
         private void SpawnEnemy()
         {
-            var x = Random.Range(SpawnBounds.x, SpawnBounds.y);
-            var y = Random.Range(SpawnBounds.z, SpawnBounds.w);
+            var minX = gameObject.transform.position.x - (SpawnAreCollider.size * 0.5f).x;
+            var maxX = gameObject.transform.position.x + (SpawnAreCollider.size * 0.5f).x;
+            var minY = gameObject.transform.position.y - (SpawnAreCollider.size * 0.5f).y;
+            var maxY = gameObject.transform.position.y + (SpawnAreCollider.size * 0.5f).y;
+            
+            var x = Random.Range(minX, maxX);
+            var y = Random.Range(minY, maxY);
             var enemyPosition = new Vector2(x, y);
             Debug.Log("Spawn: " + enemyPosition);
             Debug.Log("player: " + Player.transform.position);
-            
-            var enemyCollider = EnemyPrefab.GetComponent<Collider2D>();
-            if (enemyCollider == null)
-                return;
 
-            if (!Utils.GetBoxSizeFromCollider2D(enemyCollider, out var enemyColliderSize))
-            {
-                return;
-            }
-            
             var playerCollider = Player.GetComponent<Collider2D>();
             if (playerCollider == null)
                 return;
 
-            if (!Utils.GetBoxSizeFromCollider2D(enemyCollider, out var playerColliderSize))
+            SpawnAreCollider.IsTouching(playerCollider);
+            if (SpawnAreCollider.bounds.Intersects(playerCollider.bounds))
             {
-                return;
-            }
-
-            if (Utils.AreCollidersIntersecting(enemyPosition, enemyColliderSize + Vector2.one * 5, Player.transform.position,
-                    playerColliderSize))
-            {
-                SpawnEnemy();
-                return;
+                return; 
             }
 
             EnemiesSpawned++;
             var enemy = Instantiate(EnemyPrefab, transform);
-            enemy.Init(enemyPosition);
+            enemy.Init(enemyPosition, EnemiesText);
         }
 
         private void ResetSpawnTimer()

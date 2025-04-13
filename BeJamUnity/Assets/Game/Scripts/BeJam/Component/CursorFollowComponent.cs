@@ -25,14 +25,17 @@ namespace BeJam
             
             var targetPosition = Camera.ScreenToWorldPoint(mousePosition);
 
+            Vector2 newPosition;
             if (LerpPosition)
             {
-                transform.position = Vector2.Lerp(transform.position, targetPosition, MoveSpeed);
+                newPosition = Vector2.Lerp(transform.position, targetPosition, MoveSpeed);
             }
             else
             {
-                transform.position = new Vector2(targetPosition.x, targetPosition.y);
+                newPosition = new Vector2(targetPosition.x, targetPosition.y);
             }
+            
+            transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
         }
     }   
 }
