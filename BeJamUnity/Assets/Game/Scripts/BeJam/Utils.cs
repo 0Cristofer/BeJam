@@ -4,20 +4,15 @@ namespace BeJam
 {
     public static class Utils
     {
-        public static Vector4 GetColliderBounds(Collider2D colliderUnder)
+        public static Vector4 GetColliderBounds(Vector2 position, Vector2 boxSize)
         {
-            var size = Vector2.zero;
-            
-            if (colliderUnder is BoxCollider2D boxCollider)
-                size = boxCollider.size * 0.5f * colliderUnder.gameObject.transform.localScale;
-            else if (colliderUnder is CircleCollider2D circleCollider)
-                size = circleCollider.radius * colliderUnder.gameObject.transform.localScale;
+            var size = boxSize * 0.5f;
 
-            Vector2 botLeft = colliderUnder.gameObject.transform.position;
+            var botLeft = position;
             botLeft.x -= size.x;
             botLeft.y -= size.y;
             
-            Vector2 topRight = colliderUnder.gameObject.transform.position;
+            var topRight = position;
             topRight.x += size.x;
             topRight.y += size.y;
             
@@ -27,17 +22,49 @@ namespace BeJam
             return bounds;
         }
 
-        public static bool AreCollidersCompletelyOverlapped(Collider2D colliderA, Collider2D colliderB)
+        public static bool AreCollidersCompletelyOverlapped(Vector2 positionA, Vector2 boxSizeA, Vector2 positionB, Vector2 boxSizeB)
         {
-            var postItBounds = GetColliderBounds(colliderA);
-            var objBounds = GetColliderBounds(colliderB);
+            var objABounds = GetColliderBounds(positionA, boxSizeA);
+            var objBBounds = GetColliderBounds(positionB, boxSizeB);
             
-            var isHidden = postItBounds.x < objBounds.x &&
-                           postItBounds.y < objBounds.y &&
-                           postItBounds.z > objBounds.z &&
-                           postItBounds.w > objBounds.w;
-            
+            var isHidden = objABounds.x <= objBBounds.x &&
+                           objABounds.y <= objBBounds.y &&
+                           objABounds.z >= objBBounds.z &&
+                           objABounds.w >= objBBounds.w;
+
             return isHidden;
+        }
+        
+        public static bool AreCollidersIntersecting(Vector2 positionA, Vector2 boxSizeA, Vector2 positionB, Vector2 boxSizeB)
+        {
+            var a = new Bounds(positionA, boxSizeA);
+            var b = new Bounds(positionB, boxSizeB);
+            return a.Intersects(b);
+            // var objABounds = GetColliderBounds(positionA, boxSizeA);
+            // var objBBounds = GetColliderBounds(positionB, boxSizeB);
+            //
+            // var isHidden = objABounds.x <= objBBounds.x &&
+            //                objABounds.y <= objBBounds.y &&
+            //                objABounds.z >= objBBounds.z &&
+            //                objABounds.w >= objBBounds.w;
+            //
+            // return isHidden;
+        }
+
+        public static bool GetBoxSizeFromCollider2D(Collider2D collider2D, out Vector2 size)
+        {
+            switch (collider2D)
+            {
+                case BoxCollider2D boxCollider:
+                    size = boxCollider.size;
+                    return true;
+                case CircleCollider2D circleCollider:
+                    size = circleCollider.radius * 2 * Vector2.one;
+                    return true;
+                default:
+                    size = Vector2.zero;
+                    return false;
+            }
         }
     }    
 }

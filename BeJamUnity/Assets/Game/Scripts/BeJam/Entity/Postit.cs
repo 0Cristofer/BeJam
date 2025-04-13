@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace BeJam
@@ -6,7 +5,7 @@ namespace BeJam
     public class PostIt : MonoBehaviour
     {
         [field: SerializeField]
-        private Collider2D Collider2D { get; set; }
+        private BoxCollider2D Collider2D { get; set; }
         
         [field: SerializeField]
         private SpriteRenderer SpriteRenderer { get; set; }
@@ -54,7 +53,12 @@ namespace BeJam
             if (coverableEntity == null || otherCollider == null)
                 return;
 
-            if (Utils.AreCollidersCompletelyOverlapped(Collider2D, otherCollider))
+            if (!Utils.GetBoxSizeFromCollider2D(otherCollider, out var otherSize))
+            {
+                return;
+            }
+
+            if (Utils.AreCollidersCompletelyOverlapped(transform.position, Collider2D.size, otherCollider.gameObject.transform.position, otherSize))
             {
                 coverableEntity.OnCovered();
             }
