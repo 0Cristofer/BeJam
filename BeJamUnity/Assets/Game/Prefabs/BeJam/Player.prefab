@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BouncingMovement>k__BackingField: {fileID: 1957647312432417918}
-  <MinVelocity>k__BackingField: {x: -6, y: -6}
-  <MaxVelocity>k__BackingField: {x: 6, y: 6}
+  <MinVelocity>k__BackingField: {x: -4, y: -4}
+  <MaxVelocity>k__BackingField: {x: 4, y: 4}
 --- !u!114 &1957647312432417918
 MonoBehaviour:
   m_ObjectHideFlags: 0
