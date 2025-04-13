@@ -49,7 +49,7 @@ MonoBehaviour:
   <Player>k__BackingField: {fileID: 0}
   <SpawnAreCollider>k__BackingField: {fileID: 121239868307379662}
   <EnemiesText>k__BackingField: {fileID: 0}
-  <EnemiesToSpawn>k__BackingField: 10
+  <EnemiesToSpawn>k__BackingField: 15
   <FirstSpawnInterval>k__BackingField: 4
   <MinSpawnInterval>k__BackingField: 1
   <MaxSpawnInterval>k__BackingField: 2

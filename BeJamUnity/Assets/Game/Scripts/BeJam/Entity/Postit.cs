@@ -25,7 +25,12 @@ namespace BeJam
 
         private void Start()
         {
-            Drop();
+            IsPicked = false;
+            
+            var newColor = SpriteRenderer.color;
+            newColor.a = 1f;
+            
+            SpriteRenderer.color = newColor;
         }
 
         public void Pick()

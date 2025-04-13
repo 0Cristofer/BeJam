@@ -16,6 +16,7 @@ namespace BeJam
         
         private void Back()
         {
+            EndGameManager.TotalEnemies = 0;
             SceneManager.LoadScene("MainMenu");
         }
     }
