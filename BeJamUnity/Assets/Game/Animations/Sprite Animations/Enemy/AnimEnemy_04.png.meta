@@ -124,7 +124,7 @@ TextureImporter:
         width: 118
         height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: AnimEnemy_04_1
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 122
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d84fa8e37a6ced710800000000000000
-      internalID: 1720030529313240205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 19819db18c638fa428378495c2c5f362
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +150,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AnimEnemy_04_0: -5851830657626471104
+      AnimEnemy_04_1: 1720030529313240205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
