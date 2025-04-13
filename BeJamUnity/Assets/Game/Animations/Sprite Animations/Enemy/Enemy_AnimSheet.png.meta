@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: a070504d94f3ceb42a098a29912dc218
+guid: 51e695dd449c0464e83f2f22f2fa7f68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5809472048434036375
-    second: MainCharacter_AnimSheet_0
+      213: 7886212433008235461
+    second: Enemy_AnimSheet_0
   - first:
-      213: 4403823294924681501
-    second: MainCharacter_AnimSheet_1
+      213: -4015747122914467930
+    second: Enemy_AnimSheet_1
+  - first:
+      213: -6678954702998702473
+    second: Enemy_AnimSheet_2
+  - first:
+      213: 6239794576035576277
+    second: Enemy_AnimSheet_3
+  - first:
+      213: 6533904902047117753
+    second: Enemy_AnimSheet_4
+  - first:
+      213: 3489517002293166336
+    second: Enemy_AnimSheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainCharacter_AnimSheet_0
+      name: Enemy_AnimSheet_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 27
-        width: 139
-        height: 112
+        x: 32
+        y: 10
+        width: 129
+        height: 139
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 961478ca3fb906fa0800000000000000
-      internalID: -5809472048434036375
+      spriteID: 5c399b4cc64717d60800000000000000
+      internalID: 7886212433008235461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacter_AnimSheet_1
+      name: Enemy_AnimSheet_1
       rect:
         serializedVersion: 2
-        x: 189
-        y: 27
-        width: 139
-        height: 112
+        x: 209
+        y: 10
+        width: 129
+        height: 139
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +165,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d11739b44f58d1d30800000000000000
-      internalID: 4403823294924681501
+      spriteID: 6afd2ee94433548c0800000000000000
+      internalID: -4015747122914467930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_AnimSheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 10
+        width: 129
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d972086b14389650800000000000000
+      internalID: 6239794576035576277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_AnimSheet_4
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 10
+        width: 129
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1b3bae3e71daa50800000000000000
+      internalID: 6533904902047117753
       vertices: []
       indices: 
       edges: []
@@ -163,7 +219,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b01125ebee999544eb94c115e417a501
+    spriteID: de979bf96baeb5044a2cd290449812bf
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +229,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainCharacter_AnimSheet_0: -5809472048434036375
-      MainCharacter_AnimSheet_1: 4403823294924681501
+      Enemy_AnimSheet_0: 7886212433008235461
+      Enemy_AnimSheet_1: -4015747122914467930
+      Enemy_AnimSheet_3: 6239794576035576277
+      Enemy_AnimSheet_4: 6533904902047117753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
