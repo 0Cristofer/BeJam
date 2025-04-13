@@ -14,6 +14,14 @@ namespace BeJam
         private float PickedAlpha { get; set; }
 
         private bool IsPicked { get; set; }
+        
+        [field: SerializeField]
+        public AudioClip PickAudioClip;
+        [field: SerializeField]
+        public AudioClip StickAudioClip;
+
+        [field: SerializeField]
+        private AudioSource audioSource;
 
         private void Start()
         {
@@ -28,6 +36,10 @@ namespace BeJam
             newColor.a = PickedAlpha;
             
             SpriteRenderer.color = newColor;
+
+            audioSource.clip = PickAudioClip;
+            audioSource.Play();
+            
         }
         
         public void Drop()
@@ -38,6 +50,9 @@ namespace BeJam
             newColor.a = 1f;
             
             SpriteRenderer.color = newColor;
+
+            audioSource.clip = StickAudioClip;
+            audioSource.Play();
         }
 
         private void OnTriggerStay2D(Collider2D other)
