@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BouncingMovement>k__BackingField: {fileID: 1957647312432417918}
-  <MinVelocity>k__BackingField: {x: -4, y: -4}
-  <MaxVelocity>k__BackingField: {x: 4, y: 4}
+  <MinVelocity>k__BackingField: {x: -5, y: -5}
+  <MaxVelocity>k__BackingField: {x: 5, y: 5}
 --- !u!114 &1957647312432417918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.39, y: 1.12}
+    oldSize: {x: 1.287037, y: 1.037037}
     newSize: {x: 1.39, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
